@@ -25,7 +25,7 @@ jobs:
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
 
       - name: set up flutter version
-        uses: subosito/flutter-action@v3
+        uses: subosito/flutter-action@v2
         with: 
           flutter-version: '3.0.0'
 
@@ -33,8 +33,8 @@ jobs:
         run: flutter pub get  # Use 'flutter pub get' instead of 'dart pub get' for Flutter projects
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
-      # - name: Verify formatting
-      #   run: dart format --output=none --set-exit-if-changed .
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
 
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source
